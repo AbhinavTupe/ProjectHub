@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: #0F172A;
+  color: #E5E7EB;
+  min-width: 320px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0F172A;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+
+@layer components {
+  .app-page {
+    @apply min-h-screen bg-app-bg px-4 pb-6 pt-24 sm:px-6 lg:py-8 lg:pl-80 lg:pr-8;
+  }
+
+  .app-container {
+    @apply mx-auto max-w-7xl;
+  }
+
+  .section-title {
+    @apply text-2xl font-semibold tracking-tight text-white sm:text-3xl;
+  }
+
+  .muted-text {
+    @apply text-sm text-slate-400;
+  }
+}
+
+@keyframes floatIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-float-in {
+  animation: floatIn 360ms ease-out both;
+}
